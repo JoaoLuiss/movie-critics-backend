@@ -36,6 +36,7 @@ class MovieNotesController {
 	async update(request, response) {
 		const { title, description, rating } = request.body;
 
+		this.validateRating(rating);
 		return response.json();
 	}
 
