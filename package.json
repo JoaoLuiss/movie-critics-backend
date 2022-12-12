@@ -1,0 +1,22 @@
+{
+	"name": "movie-critics-backend",
+	"version": "1.0.0",
+	"description": "Desafio do Stage 08 no programa Explorer da RocketSeat",
+	"main": "index.js",
+	"scripts": {
+		"start": "node ./src/server",
+		"dev": "nodemon ./src/server"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"bcryptjs": "^2.4.3",
+		"express": "^4.18.2",
+		"express-async-errors": "^3.1.1",
+		"knex": "^2.3.0",
+		"nodemon": "^2.0.20",
+		"sqlite": "^4.1.2",
+		"sqlite3": "^5.1.2"
+	}
+}
