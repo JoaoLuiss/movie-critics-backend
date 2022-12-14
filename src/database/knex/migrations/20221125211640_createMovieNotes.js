@@ -4,6 +4,8 @@ exports.up = function (knex) {
 		table.text('title');
 		table.text('description');
 		table.integer('rating');
+		table.time('created_at').defaultTo(knex.fn.now());
+		table.time('updated_at');
 		table.integer('user_id').notNullable();
 		table.foreign('user_id').references('users.id');
 	});
