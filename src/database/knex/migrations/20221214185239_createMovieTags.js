@@ -5,7 +5,7 @@ exports.up = function (knex) {
 		table.integer('user_id').notNullable();
 		table.string('name').notNullable();
 
-		table.foreign('note_id').references('movie_notes.id');
+		table.foreign('note_id').references('movie_notes.id').onDelete('CASCADE');
 		table.foreign('user_id').references('users.id');
 	});
 };
