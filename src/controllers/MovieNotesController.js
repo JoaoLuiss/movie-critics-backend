@@ -12,10 +12,10 @@ class MovieNotesController {
 	async create(request, response) {
 		const { title, description, rating, user_id } = request.body;
 
-		// validando o rating
+		// validar o rating
 		validator.validateRating(rating);
 
-		// validando se existe user com o id fornecido
+		// validar user_id - verificar se existe user com o id fornecido
 		const user = await knex('users').where({ id: user_id }).first();
 		if (!user)
 			throw new AppError(

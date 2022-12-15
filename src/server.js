@@ -8,6 +8,12 @@ app.use(express.json());
 app.use(routes);
 app.use(function (error, request, response, next) {
 	console.error(error);
+	console.log(`
+	\n
+	------------------------------------
+	Server still running on port: ${PORT}
+	------------------------------------
+	\n`);
 
 	if (error instanceof AppError) {
 		return response.status(error.status).json({
@@ -24,5 +30,8 @@ app.use(function (error, request, response, next) {
 
 const PORT = 3333;
 app.listen(PORT, function (request, response) {
-	console.log(`Server is running on port ${PORT}`);
+	console.log(`
+	----------------------------------
+	Server is running on port ${PORT}
+	----------------------------------`);
 });
